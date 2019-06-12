@@ -1,0 +1,43 @@
+<mat-drawer-container class="container" autosize>
+  <mat-drawer #drawer class="drawer">
+    <span style="padding: 20px; text-align: center">
+      <h1>
+        Menu
+      </h1>
+    </span>
+    <button class="menu-button" color="primary" mat-button>
+      Tables
+    </button>
+  </mat-drawer>
+
+  <div class="sidenav-content">
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <button mat-icon-button (click)="drawer.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span class="title">Firebase Universal Admin</span>
+        <span class="spacer"></span>
+        <mat-icon>favorite</mat-icon>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>publish</mat-icon>
+            <span>Publish</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>publish</mat-icon>
+            <span>Publish</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>publish</mat-icon>
+            <span>Publish</span>
+          </button>
+        </mat-menu>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container>
