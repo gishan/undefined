@@ -5,8 +5,23 @@
         Menu
       </h1>
     </span>
-    <button class="menu-button" color="primary" mat-button>
+    <button
+      class="menu-button"
+      color="primary"
+      mat-button
+      [routerLink]="['tables']"
+      routerLinkActive="router-link-active"
+    >
       Tables
+    </button>
+    <button
+      class="menu-button"
+      color="primary"
+      mat-button
+      [routerLink]="['csv-uploader']"
+      routerLinkActive="router-link-active"
+    >
+      CSV Uploader
     </button>
   </mat-drawer>
 
@@ -25,19 +40,16 @@
         <mat-menu #menu="matMenu">
           <button mat-menu-item>
             <mat-icon>publish</mat-icon>
-            <span>Publish</span>
-          </button>
-          <button mat-menu-item>
-            <mat-icon>publish</mat-icon>
-            <span>Publish</span>
-          </button>
-          <button mat-menu-item>
-            <mat-icon>publish</mat-icon>
-            <span>Publish</span>
+            <span>Logout</span>
           </button>
         </mat-menu>
       </mat-toolbar-row>
     </mat-toolbar>
-    <router-outlet></router-outlet>
+    <div class="pages-container">
+      <div class="loading" *ngIf="loading">
+        <mat-spinner></mat-spinner>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </mat-drawer-container>

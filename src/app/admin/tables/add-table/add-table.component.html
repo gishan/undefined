@@ -1,0 +1,44 @@
+<h1 mat-dialog-title>Add New Table</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.name" placeholder="Table Name" />
+  </mat-form-field>
+  <button mat-icon-button (click)="addField()"><mat-icon>add</mat-icon></button>
+
+  <table class="example-full-width" cellspacing="0">
+    <tr *ngFor="let field of data.fields">
+      <td>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Field" [(ngModel)]="field.field" />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-select placeholder="Type" [(ngModel)]="field.type">
+            <mat-option value="string">string</mat-option>
+            <mat-option value="number">number</mat-option>
+            <mat-option value="boolean">boolean</mat-option>
+            <mat-option value="array">array</mat-option>
+            <mat-option value="map">map</mat-option>
+            <mat-option value="null">null</mat-option>
+            <mat-option value="timestamp">timestamp</mat-option>
+            <mat-option value="geopoint">geopoint</mat-option>
+            <mat-option value="reference">reference</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+      <td>
+        <button mat-icon-button (click)="removeField()">
+          <mat-icon>clear</mat-icon>
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>
+    Create Table
+  </button>
+</div>

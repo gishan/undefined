@@ -1,27 +1,5 @@
 .container {
-  height: 100%;
-
-  .mat-drawer {
-    min-width: 300px;
-
-    .mat-button {
-      padding-top: 10px !important;
-      padding-bottom: 10px !important;
-      display: block;
-      width: 100%;
-    }
-  }
-}
-
-.sidenav-content {
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-
-  .title {
-    padding-left: 20px;
-  }
-  .spacer {
-    flex: 1 1 auto;
-  }
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
 }
