@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-registration',
@@ -9,12 +10,13 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 export class RegistrationComponent implements OnInit {
   form: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private authService: AuthenticationService) {}
 
   ngOnInit() {
     this.form = this.fb.group(
       {
-        username: ['', Validators.required],
+        firstName: ['', Validators.required],
+        lastName: ['', Validators.required],
         email: ['', [Validators.required, Validators.email]],
         password: ['', Validators.required],
         confirm: ['', [Validators.required]]
@@ -28,5 +30,12 @@ export class RegistrationComponent implements OnInit {
     const confirm = group.controls.confirm.value;
 
     return password === confirm ? null : { notSame: true };
+  }
+
+
+  submit(form: FormGroup) {
+    console.log(form.value);
+    const { email,  firstName, lastName, password } = form.value;
+    this.authService.signup(email,  firstName, lastName, password);
   }
 }

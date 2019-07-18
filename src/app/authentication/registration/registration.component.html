@@ -4,18 +4,28 @@
       Register
     </mat-card-title>
     <br />
-    <form class="example-form" [formGroup]="form">
+    <form class="example-form" [formGroup]="form" (ngSubmit)="submit(form)">
       <mat-card-content>
         <mat-form-field class="example-full-width">
           <input
             matInput
             placeholder=""
-            type="email"
-            formControlName="username"
+            formControlName="firstName"
           />
-          <mat-hint>username</mat-hint>
+          <mat-hint>first name</mat-hint>
           <mat-error *ngIf="!form.hasError('required')"
-            >username is required</mat-error
+            >first name is required</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input
+            matInput
+            placeholder=""
+            formControlName="lastName"
+          />
+          <mat-hint>last name</mat-hint>
+          <mat-error *ngIf="!form.hasError('required')"
+            >last name is required</mat-error
           >
         </mat-form-field>
         <mat-form-field class="example-full-width">

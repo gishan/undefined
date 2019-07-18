@@ -5,13 +5,13 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'AIzaSyDB-xrtGHVL9Frez4ygHP9ynO4efQMs-tY',
-    authDomain: 'universal-admin.firebaseapp.com',
-    databaseURL: 'https://universal-admin.firebaseio.com',
-    projectId: 'universal-admin',
-    storageBucket: 'universal-admin.appspot.com',
-    messagingSenderId: '1012409660893',
-    appId: '1:1012409660893:web:b64843372138c567'
+    apiKey: 'AIzaSyBq7sajrNfWbdmMdPfbPGjzaJiyl3QwxIE',
+    authDomain: 'homesecurity-22b5d.firebaseapp.com',
+    databaseURL: 'https://homesecurity-22b5d.firebaseio.com',
+    projectId: 'homesecurity-22b5d',
+    storageBucket: 'homesecurity-22b5d.appspot.com',
+    messagingSenderId: '1069244414857',
+    appId: '1:1069244414857:web:673b4ccb5ce783b9'
   }
 };
 
